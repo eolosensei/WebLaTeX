@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{external}
+\tikzexternalize
+
+\begin{document}
+
+\begin{tikzpicture}[scale=0.4]
+    \draw[step=2cm,lightgray,very thin] (0,0) grid (50,20);
+    \draw (0,0) -- (50,0);
+    \draw (0,0) -- (0,20);
+    \foreach \x in {0,10,20,30,40,50}
+    \draw (\x,0.5) -- (\x,-0.5) node[anchor=north] {\x};
+    \node[font=\large] (X) at (45,-2) {t(s)};
+    \foreach \y in {5,10,15,20}
+    \draw (0.5,\y) -- (-0.5,\y) node[anchor=east] {\y};
+    \node[font=\large] (Y) at (-2,17) {x(m)};
+    \draw[red,very thick] (0,6) -- (4,10) -- (12,10) -- (14,20) -- (20,16) -- (40,0);
+\end{tikzpicture}
+
+
+\end{document}
